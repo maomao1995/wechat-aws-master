@@ -12,7 +12,7 @@ import json
  
 def pullmessage(request):
 
-    print 'Try to pull message...'
+    print('Try to pull message...')
 
     # 获取全部待转发的用户消息
     messages = qrcode_models.RequestMessage.objects.all()
@@ -34,7 +34,7 @@ def pullmessage(request):
     # 删除相关消息记录
     messages.delete()
 
-    print 'Take Message:' + jsonresp
+    print('Take Message:' + jsonresp)
      
     response =  HttpResponse(jsonresp)
     response.charset = 'UTF-8'
@@ -46,7 +46,7 @@ def pushmessage(request):
 
     message = json.loads(request.raw_post_data)
 
-    print 'Try to push message : ' + request.raw_post_data
+    print('Try to push message : ' + request.raw_post_data)
 
     # 获取全部待转发的用户消息
     message = qrcode_models.RequestMessage.objects.create(
@@ -56,6 +56,6 @@ def pushmessage(request):
         msg_data = message['msg_data'],
         msg_url  = message['msg_url'])
 
-    print 'Push Message' + message + ' To ' + message['msg_dst']
+    print('Push Message' + message + ' To ' + message['msg_dst'])
     
     return HttpResponse('Success')
