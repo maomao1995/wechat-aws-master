@@ -1,12 +1,23 @@
 #coding=utf8
 from werobot import WeRoBot
 #from urllib import urlretrieve
-#from werobot.replies import ImageReply
-#from qrcode import models as qrcode_models
+from werobot.replies import ImageReply
+from qrcode import models as qrcode_models
 import json
 import logging
 
 logging.basicConfig()
+
+def check_signature(timestamp, nonce, signature):
+    """
+    根据时间戳和生成签名的字符串 (nonce) 检查签名。
+
+    :param timestamp: 时间戳
+    :param nonce: 生成签名的随机字符串
+    :param signature: 要检查的签名
+    :return: 如果签名合法将返回 ``True``，不合法将返回 ``False``
+    """
+    return True
 
 wechat = WeRoBot(enable_session=False,
                 token='awswechat',
@@ -53,7 +64,7 @@ def echo(message):
 def echo(message):
     print('Recive Text:' + message.content)
 
-    #return message.content
+    return message.content
 
     #msg_obj = qrcode_models.RequestMessage.objects.create(
     #msg_id   = message.message_id,
@@ -62,13 +73,13 @@ def echo(message):
     #msg_data = message.content,
     #msg_url  = '')
     #msg_obj.save()
-    return 'Text['+message.content+'] Processing ...'
+    #return 'Text['+message.content+'] Processing ...'
 
 #image 修饰的 Handler 只处理图片消息
 @wechat.image
 def image(message):
     print('Recive Image:' + message.img)
-
+    return message.img
     #下载文件并上传资源，重新返回
     #urlretrieve(message.img,'/home/ubuntu/wechat-aws/wechat/media_file.jpg') 
     #media_file = open('/home/ubuntu/wechat-aws/wechat/media_file.jpg')
@@ -89,14 +100,14 @@ def image(message):
     #msg_data = message.img,
     #msg_url  = message.img)
     #msg_obj.save()
-    return 'Image[' + message.img + '] Processing ...'
+    #return 'Image[' + message.img + '] Processing ...'
 
      
 #voice 修饰的 Handler 只处理语音消息
 @wechat.voice
 def voice(message):
     print('Recive Voice:' + message.media_id)
-    #return message.recognition
+    return message.recognition
 
     #msg_obj = qrcode_models.RequestMessage.objects.create(
     #msg_id   = message.message_id,
@@ -105,7 +116,7 @@ def voice(message):
     #msg_data = message.recognition,
     #msg_url  = message.media_id)
     #msg_obj.save()
-    return 'Voice[' + message.recognition + '] Processing...'
+    #return 'Voice[' + message.recognition + '] Processing...'
     
 #location 修饰的 Handler 只处理语音消息
 @wechat.location
