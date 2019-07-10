@@ -14,9 +14,8 @@ TAKEN = 'awswechat'
 APP_ID = 'wx354be169ddce26e2'
 APP_SECRET = '6e1138ffb0f1e79a433e15f42da5c90f'
 
-
-robot = WeRoBot(enable_session=True,
-                token=TAKEN,
+#enable_session=False,
+robot = WeRoBot(token=TAKEN,
                 APP_ID=APP_ID,
                 APP_SECRET=APP_SECRET)
 
@@ -54,6 +53,7 @@ client.create_menu({
 # 通过修饰符添加handler
 @robot.handler
 def handler(message):
+    print('Hello World!')
     return 'Hello World!'
 
 #text 修饰的 Handler 只处理文本消息
@@ -149,13 +149,15 @@ def check_signature(timestamp, nonce, signature):
     if not (TAKEN and timestamp and nonce and signature):
         return False
     sign = utils.get_signature(TAKEN, timestamp, nonce)
+    print(sign)
     return sign
 
 def parse_message(body, timestamp, nonce, msg_signature):
+    print(1)
     message_dict = parser.parse_xml(body)
     return parser.process_message(message_dict)
 
 def get_encrypted_reply(message):
-    print(message)
+    print(2)
     return message
 
