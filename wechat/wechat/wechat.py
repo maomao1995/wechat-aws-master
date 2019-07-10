@@ -156,12 +156,6 @@ def parse_message(body, timestamp, nonce, msg_signature):
     return parser.process_message(message_dict)
 
 def get_encrypted_reply(message):
-    reply = WeRoBot.get_reply(message)
-    if not reply:
-        WeRoBot.logger.warning("No handler responded message %s" % message)
-        return ''
-    if WeRoBot.use_encryption:
-        return WeRoBot.crypto.encrypt_message(reply)
-    else:
-        return reply.render()
+    print(message)
+    return message
 

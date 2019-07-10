@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16e3f344-0ab8-49be-a66e-0bfba7bed556" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wechat/wechat/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wechat/wechat/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wechat/wechat/wechat.py" beforeDir="false" afterPath="$PROJECT_DIR$/wechat/wechat/wechat.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,38 +46,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/contrib/django.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+                <state relative-caret-position="418">
+                  <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
                   <folding>
                     <element signature="e#24#62#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/crypto/__init__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="455">
-                  <caret line="119" column="28" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/utils.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/parser.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -117,14 +88,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/robot.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="610" column="8" lean-forward="true" selection-start-line="610" selection-start-column="8" selection-end-line="617" selection-end-column="33" />
+                <state relative-caret-position="494">
+                  <caret line="597" column="44" selection-start-line="597" selection-start-column="44" selection-end-line="597" selection-end-column="44" />
                   <folding>
                     <element signature="e#24#80#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/replies.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="278">
+                  <caret line="245" column="24" lean-forward="true" selection-start-line="245" selection-start-column="24" selection-end-line="245" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -136,8 +116,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/wechat/wechat/wechat.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="423">
-                  <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+                <state relative-caret-position="537">
+                  <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
                   <folding>
                     <element signature="e#13#40#0" expanded="true" />
                   </folding>
@@ -291,23 +271,23 @@
       <option name="presentableId" value="Default" />
       <updated>1562666117928</updated>
       <workItem from="1562666121458" duration="233000" />
-      <workItem from="1562666385664" duration="19758000" />
+      <workItem from="1562666385664" duration="20250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19991000" />
+    <option name="totallyTimeSpent" value="20483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="302" y="0" width="1400" height="1051" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20086706" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20086706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.18530351" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18530351" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -442,13 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wechat/wechat/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -456,13 +429,6 @@
           <folding>
             <element signature="e#640#672#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -480,6 +446,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/crypto/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -489,8 +469,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/contrib/django.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        <state relative-caret-position="418">
+          <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding>
             <element signature="e#24#62#0" expanded="true" />
           </folding>
@@ -499,18 +479,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="610" column="8" lean-forward="true" selection-start-line="610" selection-start-column="8" selection-end-line="617" selection-end-column="33" />
+        <state relative-caret-position="494">
+          <caret line="597" column="44" selection-start-line="597" selection-start-column="44" selection-end-line="597" selection-end-column="44" />
           <folding>
             <element signature="e#24#80#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/Python37/Lib/site-packages/werobot/replies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="245" column="24" lean-forward="true" selection-start-line="245" selection-start-column="24" selection-end-line="245" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wechat/wechat/wechat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+        <state relative-caret-position="537">
+          <caret line="159" column="18" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
           <folding>
             <element signature="e#13#40#0" expanded="true" />
           </folding>
