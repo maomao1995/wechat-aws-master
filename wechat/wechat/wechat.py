@@ -1,77 +1,70 @@
 #coding=utf8
 from werobot import WeRoBot
+from werobot import utils
+from werobot import parser
 #from urllib import urlretrieve
-from werobot.replies import ImageReply
-from qrcode import models as qrcode_models
-import json
+#from werobot.replies import ImageReply
+#from qrcode import models as qrcode_models
+#import json
 import logging
 
 logging.basicConfig()
 
-def check_signature(timestamp, nonce, signature):
-    """
-    根据时间戳和生成签名的字符串 (nonce) 检查签名。
+TAKEN = 'awswechat'
+APP_ID = 'wx354be169ddce26e2'
+APP_SECRET = '6e1138ffb0f1e79a433e15f42da5c90f'
 
-    :param timestamp: 时间戳
-    :param nonce: 生成签名的随机字符串
-    :param signature: 要检查的签名
-    :return: 如果签名合法将返回 ``True``，不合法将返回 ``False``
-    """
-    print(signature)
-    return True
 
-def parse_message(body, timestamp, nonce, msg_signature):
-    print("parse_message"+body+";"+nonce+";"+msg_signature)
-    return body
-def get_encrypted_reply(message):
-    return message
+robot = WeRoBot(enable_session=True,
+                token=TAKEN,
+                APP_ID=APP_ID,
+                APP_SECRET=APP_SECRET)
 
-wechat = WeRoBot(enable_session=False,
-                token='awswechat',
-                APP_ID='wx354be169ddce26e2',
-                APP_SECRET='6e1138ffb0f1e79a433e15f42da5c90f')
+client = robot.client
+client.create_menu({
+   "button":[
+       {
+           "type":"click",
+           "name":"Warning",
+           "key":"V1001_TODAY_WARNING"
+       },
+       {
+           "type":"click",
+           "name":"Weather",
+           "key":"V1001_TODAY_WEATHER"
+       },
+       {
+           "name":"Help",
+           "sub_button":[
+               {
+                   "type":"view",
+                   "name":"Home",
+                   "url":"http://www.shipxy.com"
+               },
+               {
+                   "type":"view",
+                   "name":"Service",
+                   "url":"http://www.cetc.com.cn"
+               }
+           ]
+      }]
+})
 
-client = wechat.client
-##client.create_menu({
-##    "button":[
-##        {
-##            "type":"click",
-##            "name":"Warning",
-##            "key":"V1001_TODAY_WARNING"
-##        },
-##        {
-##            "type":"click",
-##            "name":"Weather",
-##            "key":"V1001_TODAY_WEATHER"
-##        },
-##        {
-##            "name":"Help",
-##            "sub_button":[
-##                {
-##                    "type":"view",
-##                    "name":"Home",
-##                    "url":"http://www.shipxy.com"
-##                },
-##                {
-##                    "type":"view",
-##                    "name":"Service",
-##                    "url":"http://www.cetc.com.cn"
-##                }
-##            ]
-##       }]
-##})
 
 # 通过修饰符添加handler
-@wechat.handler
-def echo(message):
+@robot.handler
+def handler(message):
     return 'Hello World!'
 
 #text 修饰的 Handler 只处理文本消息
-@wechat.text
-def echo(message):
+@robot.text
+def text(message, session):
     print('Recive Text:' + message.content)
+    count = session.get("count", 0) + 1
+    session["count"] = count
+    return "Hello! You have sent %s messages to me" % count
+    #return message.content
 
-    return message.content
 
     #msg_obj = qrcode_models.RequestMessage.objects.create(
     #msg_id   = message.message_id,
@@ -83,7 +76,7 @@ def echo(message):
     #return 'Text['+message.content+'] Processing ...'
 
 #image 修饰的 Handler 只处理图片消息
-@wechat.image
+@robot.image
 def image(message):
     print('Recive Image:' + message.img)
     return message.img
@@ -111,7 +104,7 @@ def image(message):
 
      
 #voice 修饰的 Handler 只处理语音消息
-@wechat.voice
+@robot.voice
 def voice(message):
     print('Recive Voice:' + message.media_id)
     return message.recognition
@@ -126,24 +119,24 @@ def voice(message):
     #return 'Voice[' + message.recognition + '] Processing...'
     
 #location 修饰的 Handler 只处理语音消息
-@wechat.location
+@robot.location
 def location(message):
     print('Recive Location:')
     return 'Hello My Friend!Location' + message.label
     
 #subscribe 被关注 (Event)
-@wechat.subscribe
+@robot.subscribe
 def subscribe(message):
-    return 'Hello My Friend!'
+    return '(@^o^@)'
 
 #location_event 修饰的 Handler 只处理上报位置 (Event)
-@wechat.location_event
+@robot.location_event
 def location_event(message):
     print('Recive Location Event:')
     return 'Location Success!' 
 
 #click 修饰的 Handler 只处理自定义菜单事件 (Event)
-@wechat.click
+@robot.click
 def click(message):
     print('Recive Menu Event:' + message.key)
     if message.key == "V1001_TODAY_WARNING":
@@ -152,5 +145,23 @@ def click(message):
         return "Waiting For Weather Report..."
 
 
+def check_signature(timestamp, nonce, signature):
+    if not (TAKEN and timestamp and nonce and signature):
+        return False
+    sign = utils.get_signature(TAKEN, timestamp, nonce)
+    return sign
 
+def parse_message(body, timestamp, nonce, msg_signature):
+    message_dict = parser.parse_xml(body)
+    return parser.process_message(message_dict)
+
+def get_encrypted_reply(message):
+    reply = WeRoBot.get_reply(message)
+    if not reply:
+        WeRoBot.logger.warning("No handler responded message %s" % message)
+        return ''
+    if WeRoBot.use_encryption:
+        return WeRoBot.crypto.encrypt_message(reply)
+    else:
+        return reply.render()
 
