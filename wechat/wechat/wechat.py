@@ -17,7 +17,14 @@ def check_signature(timestamp, nonce, signature):
     :param signature: 要检查的签名
     :return: 如果签名合法将返回 ``True``，不合法将返回 ``False``
     """
+    print(signature)
     return True
+
+def parse_message(body, timestamp, nonce, msg_signature):
+    print("parse_message"+body+";"+nonce+";"+msg_signature)
+    return body
+def get_encrypted_reply(message):
+    return message
 
 wechat = WeRoBot(enable_session=False,
                 token='awswechat',
