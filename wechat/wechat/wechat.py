@@ -2,6 +2,7 @@
 from werobot import WeRoBot
 from werobot import utils
 from werobot import parser
+
 #from urllib import urlretrieve
 #from werobot.replies import ImageReply
 #from qrcode import models as qrcode_models
@@ -14,8 +15,9 @@ TAKEN = 'awswechat'
 APP_ID = 'wx354be169ddce26e2'
 APP_SECRET = '6e1138ffb0f1e79a433e15f42da5c90f'
 
-#enable_session=False,
-robot = WeRoBot(token=TAKEN,
+#
+robot = WeRoBot(enable_session=False,
+                token=TAKEN,
                 APP_ID=APP_ID,
                 APP_SECRET=APP_SECRET)
 
@@ -56,6 +58,7 @@ def handler(message):
     print('Hello World!')
     return 'Hello World!'
 
+
 #text 修饰的 Handler 只处理文本消息
 @robot.text
 def text(message, session):
@@ -74,6 +77,7 @@ def text(message, session):
     #msg_url  = '')
     #msg_obj.save()
     #return 'Text['+message.content+'] Processing ...'
+
 
 #image 修饰的 Handler 只处理图片消息
 @robot.image
@@ -117,23 +121,27 @@ def voice(message):
     #msg_url  = message.media_id)
     #msg_obj.save()
     #return 'Voice[' + message.recognition + '] Processing...'
-    
+
+
 #location 修饰的 Handler 只处理语音消息
 @robot.location
 def location(message):
     print('Recive Location:')
     return 'Hello My Friend!Location' + message.label
-    
+
+
 #subscribe 被关注 (Event)
 @robot.subscribe
 def subscribe(message):
     return '(@^o^@)'
+
 
 #location_event 修饰的 Handler 只处理上报位置 (Event)
 @robot.location_event
 def location_event(message):
     print('Recive Location Event:')
     return 'Location Success!' 
+
 
 #click 修饰的 Handler 只处理自定义菜单事件 (Event)
 @robot.click
@@ -146,11 +154,7 @@ def click(message):
 
 
 def check_signature(timestamp, nonce, signature):
-    if not (TAKEN and timestamp and nonce and signature):
-        return False
-    sign = utils.get_signature(TAKEN, timestamp, nonce)
-    print(sign)
-    return sign
+    return True
 
 def parse_message(body, timestamp, nonce, msg_signature):
     print(1)
@@ -160,4 +164,6 @@ def parse_message(body, timestamp, nonce, msg_signature):
 def get_encrypted_reply(message):
     print(2)
     return message
+
+
 

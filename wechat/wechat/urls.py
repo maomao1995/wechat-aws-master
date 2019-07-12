@@ -17,11 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from werobot.contrib.django import make_view
 from wechat import wechat
-from wechat import success
-#from qrcode import views
 
 urlpatterns = [
-    url(r'^test/', success.success),
     url(r'^wechat/', make_view(wechat)),
     url(r'^admin/', admin.site.urls),
     #url(r'^qrcode/pull', views.pullmessage),
