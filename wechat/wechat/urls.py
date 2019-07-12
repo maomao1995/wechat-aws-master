@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-# from werobot.contrib.django import make_view
-from wechat import view
+from werobot.contrib.django import make_view
 from wechat import wechat
 
+
 urlpatterns = [
-    url(r'^wechat/', view.wechat(wechat)),
+    url(r'^wechat/', make_view(wechat)),
     url(r'^admin/', admin.site.urls),
-    #url(r'^qrcode/pull', views.pullmessage),
-    #url(r'^qrcode/push', views.pushmessage),
 ]
